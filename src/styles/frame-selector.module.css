@@ -1,0 +1,134 @@
+/* frame-selector.module.css */
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 상단: 선택한 프레임 미리보기 영역 */
+.previewSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.previewTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* 실제 SoptWebFrame이 들어가는 컨테이너 */
+.previewContainer {
+  width: 100%;
+  max-width: 40rem; /* 프레임 조금 크게 */
+  aspect-ratio: 1104 / 908; /* 실제 프레임 비율에 맞춤 */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #f3f4f6;
+  padding: 0.75rem; /* 프레임 바깥에 살짝 여백 */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+/* 하단: 프레임 선택 리스트 */
+.selectorSection {
+  width: 100%;
+}
+
+.selectorTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.frameList {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+/* 프레임 버튼(썸네일) */
+.frameButton {
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 0.75rem;
+  transition: all 0.18s ease-out;
+  border: 2px solid #e5e7eb;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.frameButton:hover {
+  border-color: color-mix(in srgb, #2563eb 40%, transparent);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.frameButton.selected {
+  border-color: #2563eb;
+  box-shadow: 0 10px 15px -6px rgba(15, 23, 42, 0.25);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* 썸네일 박스: 프레임 비율 비슷하게 가로가 조금 긴 직사각형 */
+.frameThumbnail {
+  width: 6rem;
+  height: 4rem; /* 3:2 정도 비율 */
+  position: relative;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+/* 프레임 컬러/배경만 살짝 보여주는 박스 */
+.framePreview {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* 선택 표시 오버레이 */
+.selectedIndicator {
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in srgb, #2563eb 12%, transparent);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.25rem;
+  border-radius: inherit;
+}
+
+.checkCircle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #ffffff;
+}

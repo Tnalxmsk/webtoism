@@ -1,0 +1,159 @@
+/* app.module.css */
+
+.container {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    #f9fafb,
+    #f9fafb,
+    color-mix(in srgb, #e0f2fe 5%, transparent)
+  );
+}
+
+.innerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    to right,
+    #2563eb,
+    color-mix(in srgb, #2563eb 60%, transparent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: #6b7280; /* muted-foreground */
+}
+
+.contentWrapper {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #2563eb;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  gap: 1.5rem;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.errorIcon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, #ef4444 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorIconSvg {
+  width: 2rem;
+  height: 2rem;
+  color: #ef4444;
+}
+
+.errorTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.errorMessage {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.permissionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  gap: 1rem;
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.permissionIcon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, #2563eb 10%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.permissionIconSvg {
+  width: 2rem;
+  height: 2rem;
+  color: #2563eb;
+}
+
+.permissionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.permissionMessage {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

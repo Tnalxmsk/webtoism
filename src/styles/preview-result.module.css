@@ -1,0 +1,62 @@
+/* preview-result.module.css */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.imageSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  max-width: 56rem;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* 프레임 내부 전체를 보이게 유지 */
+  object-fit: contain;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.downloadButton {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .downloadButton {
+    width: auto;
+  }
+}
+
+.retakeButton {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .retakeButton {
+    width: auto;
+  }
+}
