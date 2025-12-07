@@ -1,4 +1,3 @@
-// components/frame/WebAlienFrame.tsx
 import type { ReactNode } from "react";
 import styles from "./WebAlienFrame.module.css";
 

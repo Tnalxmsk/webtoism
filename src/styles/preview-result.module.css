@@ -23,7 +23,6 @@
   width: 100%;
   height: auto;
   display: block;
-  /* 프레임 내부 전체를 보이게 유지 */
   object-fit: contain;
 }
 

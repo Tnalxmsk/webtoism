@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { loadImage } from "../features/frame/composeSoptWebFrame";
+import { loadImage } from "../features/frame/loadImage.ts";
 
 // Frame 전체 크기 (디자인 고정값)
 const FRAME_WIDTH = 1104;

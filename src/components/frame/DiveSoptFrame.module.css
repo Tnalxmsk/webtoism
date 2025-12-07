@@ -3,20 +3,14 @@
   width: 100%;
   max-width: 1104px;
   aspect-ratio: 1104 / 908;
-
-  /* Figma 그라데이션과 최대한 비슷하게 */
   background: linear-gradient(240deg, #4B222A 32.02%, #0F1010 98.1%);
   overflow: hidden;
-
-  /* 상하좌우 32px 패딩(디자인 기준) */
-  padding: 32px 32px 16px 32px;
+  padding: 32px 32px 0 32px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
 }
 
-/* 위쪽: 사진 영역 */
 .photoInner {
   position: relative;
   flex: 1;
@@ -31,17 +25,16 @@
   display: block;
 }
 
-/* 아래: 높이 70px짜리 로고 영역 */
 .bottomArea {
-  height: 70px;
   display: flex;
   justify-content: center;
-  align-items: center;  /* 여기 기준으로 중앙 정렬 */
+  align-items: center;
 }
 
 .logo {
-  width: 92px;
+  width: 82px;
   object-fit: contain;
+  align-self: center;
 }
 
 .overlay {

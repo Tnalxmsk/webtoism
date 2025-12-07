@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { loadImage } from "../features/frame/composeSoptWebFrame.ts";
+import { loadImage } from "../features/frame/loadImage.ts";
 
 const FRAME_WIDTH = 1104;
 const FRAME_HEIGHT = 908;
@@ -11,7 +11,7 @@ const FRAME_PADDING_BOTTOM = 0;
 
 const BOTTOM_AREA_HEIGHT = 70;
 const PATTERN_HEIGHT = 28;
-const PATTERN_BOTTOM_OFFSET = 10; // .patternBar bottom: 10px
+const PATTERN_BOTTOM_OFFSET = 10;
 
 export function useSoptWebFrameCanvas(photoUrl: string | null) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -27,8 +27,8 @@ export function useSoptWebFrameCanvas(photoUrl: string | null) {
       try {
         const [photoImg, patternImg, logoImg] = await Promise.all([
           loadImage(photoUrl),
-          loadImage("/img-frame-sopt-web-logo.png"), // ⬅️ public/img-frame-sopt-web-logo.png
-          loadImage("/ic-frame-sopt-web-logo.svg"),  // ⬅️ public/ic-frame-sopt-web-logo.svg
+          loadImage("/img-frame-sopt-web-logo.png"),
+          loadImage("/ic-frame-sopt-web-logo.svg"),
         ]);
 
         if (cancelled) return;
@@ -115,7 +115,6 @@ export function useSoptWebFrameCanvas(photoUrl: string | null) {
           ctx.drawImage(patternImg, x, patternY, patternW, patternH);
         }
 
-        // 5) 아래 로고 (CSS: height: 70px; padding-top: 12px; flex-start)
         const bottomTop = H - BOTTOM_AREA_HEIGHT;
 
         const logoW = 70;
@@ -123,9 +122,7 @@ export function useSoptWebFrameCanvas(photoUrl: string | null) {
           logoW / (logoImg.naturalWidth || logoImg.width || logoW);
         const logoH =
           (logoImg.naturalHeight || logoImg.height || logoW) * logoScale;
-
         const logoX = W / 2 - logoW / 2;
-        // ⬅️ 여기 핵심: 중앙이 아니라 top 기준 + padding-top 으로
         const logoY = bottomTop + (BOTTOM_AREA_HEIGHT - logoH) / 2;
 
         ctx.drawImage(logoImg, logoX, logoY, logoW, logoH);

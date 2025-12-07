@@ -42,7 +42,6 @@
   pointer-events: none;
 }
 
-/* 아래: 로고 영역 (프레임 색 배경) */
 .bottomArea {
   height: 70px;
   display: flex;
@@ -51,7 +50,6 @@
   justify-content: center;
   padding-top: 0;
 }
-
 
 .logo {
   width: 70px;

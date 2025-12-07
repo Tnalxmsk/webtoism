@@ -21,9 +21,10 @@ export function FrameSelector({
     <div className={styles.wrapper}>
       {selectedFrame && (
         <div className={styles.previewSection}>
-          <h2 className={styles.previewTitle}>선택한 프레임 미리보기</h2>
           <div className={styles.previewContainer}>
-            {renderPreview(selectedFrame)}
+            <div className={styles.previewInner}>
+              {renderPreview(selectedFrame)}
+            </div>
           </div>
           <p className={styles.previewName}>{selectedFrame.name}</p>
         </div>
@@ -35,6 +36,7 @@ export function FrameSelector({
           {frames.map((frame) => (
             <button
               key={frame.id}
+              type="button"
               onClick={() => onSelectFrame(frame.id)}
               className={`${styles.frameButton} ${
                 selectedFrameId === frame.id ? styles.selected : ""
@@ -42,12 +44,9 @@ export function FrameSelector({
               aria-label={`${frame.name} 프레임 선택`}
             >
               <div className={styles.frameThumbnail}>
-                {/* 썸네일용 간단한 박스 정도만 유지 */}
                 <div
                   className={styles.framePreview}
-                  style={{
-                    background: frame.background,
-                  }}
+                  style={{ background: frame.background }}
                 />
               </div>
               {selectedFrameId === frame.id && (
@@ -60,7 +59,11 @@ export function FrameSelector({
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                 </div>

@@ -1,4 +1,3 @@
-// App.tsx
 import { useState } from "react";
 import { useUserMedia } from "./hooks/use-user-media";
 import { FrameSelector } from "./components/frame-selector";
@@ -67,7 +66,6 @@ export default function App() {
       <div className={styles.innerContainer}>
         <header className={styles.header}>
           <h1 className={styles.title}>웹토이즘</h1>
-          <p className={styles.subtitle}>사진을 찍고 원하는 프레임을 씌워보세요</p>
         </header>
 
         <div className={styles.contentWrapper}>
@@ -125,7 +123,6 @@ export default function App() {
 
               {error && (
                 <div className={styles.errorContainer}>
-                  {/* ... 기존 에러 UI 그대로 */}
                   <div className={styles.buttonGroup}>
                     <Button onClick={handleBackToFrameSelection} variant="outline">
                       이전 단계
@@ -150,7 +147,6 @@ export default function App() {
 
               {!isLoading && !error && !stream && (
                 <div className={styles.permissionContainer}>
-                  {/* ... 권한 안내 UI */}
                   <Button onClick={handleBackToFrameSelection} variant="outline" style={{ marginTop: "1rem" }}>
                     이전 단계
                   </Button>

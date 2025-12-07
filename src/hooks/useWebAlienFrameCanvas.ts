@@ -1,12 +1,11 @@
 import { useEffect, useRef } from "react";
-import { loadImage } from "../features/frame/composeSoptWebFrame";
+import { loadImage } from "../features/frame/loadImage.ts";
 
 const W = 1104;
 const H = 908;
 const PADDING = 32;
 const BOTTOM_FRAME = 70;
 
-// ✅ WebAlienFrame.tsx에서 실제 쓰는 src랑 반드시 똑같이 맞춰줘
 const UFO_SRC = "/img-frame-web-alien-ufo.png";
 const CIRCLE_SRC = "/img-frame-web-alien-circle.png";
 const DASH_SRC = "/ic-frame-web-alien-dash.svg";
@@ -96,8 +95,6 @@ export function useWebAlienFrameCanvas(photoUrl: string | null) {
             const circleW = 220;
             const cScale = circleW / (circleImg.naturalWidth || circleImg.width || circleW);
             const circleH = (circleImg.naturalHeight || circleImg.height || circleW) * cScale;
-
-            // CSS: left:-30px, bottom:-50px 와 비슷하게
             const circleX = photoX - 15;
             const circleY = photoBottom + 75 - circleH;
 
@@ -115,8 +112,7 @@ export function useWebAlienFrameCanvas(photoUrl: string | null) {
             const dScale = dashW / (dashImg.naturalWidth || dashImg.width || dashW);
             const dashH = (dashImg.naturalHeight || dashImg.height || dashW) * dScale;
 
-            // bottom 프레임(70px)의 중앙쯤에 오도록 offset 조정
-            const bottomCenterOffset = BOTTOM_FRAME / 2 + 10; // 35px
+            const bottomCenterOffset = BOTTOM_FRAME / 2 + 10;
             const dashX = W - PADDING - dashW;
             const dashY = photoBottom + bottomCenterOffset - dashH / 2;
 
